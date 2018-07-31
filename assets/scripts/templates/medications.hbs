@@ -1,0 +1,6 @@
+<ul class="list-group">
+  {{#each meds as |med|}}
+    <li class="list-group-item" data-id="{{med.id}}">{{med.name}}</li>
+    {{!-- <li class="list-group-item">{{med.dosage}}</li> --}}
+  {{/each}}
+</ul>

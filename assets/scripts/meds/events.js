@@ -1,12 +1,17 @@
 'use strict'
 
-const getMeds = (event) => {
+const api = require('./api')
+const ui = require('./ui')
+
+const onGetMeds = (event) => {
   event.preventDefault()
-  console.log(event.target)
+  api.getMeds()
+    .then(ui.getMedsSuccess)
+    .catch(ui.failure)
 }
 
 const addHandlers = () => {
-  $('#get-meds').on('click', getMeds)
+  $('#get-meds').on('click', onGetMeds)
 }
 
 module.exports = {
